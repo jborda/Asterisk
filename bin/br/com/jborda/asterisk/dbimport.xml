@@ -1,0 +1,800 @@
+<schema>
+  <tables class="linked-hash-map">
+    <entry>
+      <string>extensions</string>
+      <table name="extensions">
+        <columns>
+          <entry>
+            <string>id</string>
+            <column name="id" typeName="int" type="integer" size="10" decimals="0" notNullable="true" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>context</string>
+            <column name="context" typeName="varchar" type="varchar" size="20" decimals="0" notNullable="true" primaryKey="true">
+              <table reference="../../../.."/>
+              <uniqueConstraints>
+                <index name="PRIMARY">
+                  <columns>
+                    <string>context</string>
+                    <string>exten</string>
+                    <string>priority</string>
+                  </columns>
+                </index>
+              </uniqueConstraints>
+            </column>
+          </entry>
+          <entry>
+            <string>exten</string>
+            <column name="exten" typeName="varchar" type="varchar" size="20" decimals="0" notNullable="true" primaryKey="true">
+              <table reference="../../../.."/>
+              <uniqueConstraints>
+                <index reference="../../../../entry[2]/column/uniqueConstraints/index"/>
+              </uniqueConstraints>
+            </column>
+          </entry>
+          <entry>
+            <string>priority</string>
+            <column name="priority" typeName="tinyint" type="tinyint" size="3" decimals="0" notNullable="true" primaryKey="true">
+              <table reference="../../../.."/>
+              <uniqueConstraints>
+                <index reference="../../../../entry[2]/column/uniqueConstraints/index"/>
+              </uniqueConstraints>
+            </column>
+          </entry>
+          <entry>
+            <string>app</string>
+            <column name="app" typeName="varchar" type="varchar" size="20" decimals="0" notNullable="true" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>appdata</string>
+            <column name="appdata" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="true" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+        </columns>
+        <uniqueConstraints>
+          <entry>
+            <string>PRIMARY</string>
+            <index reference="../../../columns/entry[2]/column/uniqueConstraints/index"/>
+          </entry>
+        </uniqueConstraints>
+      </table>
+    </entry>
+    <entry>
+      <string>queue_members</string>
+      <table name="queue_members">
+        <columns>
+          <entry>
+            <string>uniqueid</string>
+            <column name="uniqueid" typeName="int unsigned" type="integer" size="10" decimals="0" notNullable="true" primaryKey="true">
+              <table reference="../../../.."/>
+              <uniqueConstraints>
+                <index name="PRIMARY">
+                  <columns>
+                    <string>uniqueid</string>
+                  </columns>
+                </index>
+              </uniqueConstraints>
+            </column>
+          </entry>
+          <entry>
+            <string>membername</string>
+            <column name="membername" typeName="varchar" type="varchar" size="40" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>queue_name</string>
+            <column name="queue_name" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints>
+                <index name="queue_interface">
+                  <columns>
+                    <string>queue_name</string>
+                    <string>interface</string>
+                  </columns>
+                </index>
+              </uniqueConstraints>
+            </column>
+          </entry>
+          <entry>
+            <string>interface</string>
+            <column name="interface" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints>
+                <index reference="../../../../entry[3]/column/uniqueConstraints/index"/>
+              </uniqueConstraints>
+            </column>
+          </entry>
+          <entry>
+            <string>penalty</string>
+            <column name="penalty" typeName="int" type="integer" size="10" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>paused</string>
+            <column name="paused" typeName="BIT" type="bit" size="0" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+        </columns>
+        <uniqueConstraints>
+          <entry>
+            <string>PRIMARY</string>
+            <index reference="../../../columns/entry/column/uniqueConstraints/index"/>
+          </entry>
+          <entry>
+            <string>queue_interface</string>
+            <index reference="../../../columns/entry[3]/column/uniqueConstraints/index"/>
+          </entry>
+        </uniqueConstraints>
+      </table>
+    </entry>
+    <entry>
+      <string>queues</string>
+      <table name="queues">
+        <columns>
+          <entry>
+            <string>name</string>
+            <column name="name" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="true" primaryKey="true">
+              <table reference="../../../.."/>
+              <uniqueConstraints>
+                <index name="PRIMARY">
+                  <columns>
+                    <string>name</string>
+                  </columns>
+                </index>
+              </uniqueConstraints>
+            </column>
+          </entry>
+          <entry>
+            <string>musiconhold</string>
+            <column name="musiconhold" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>announce</string>
+            <column name="announce" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>context</string>
+            <column name="context" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>timeout</string>
+            <column name="timeout" typeName="int" type="integer" size="10" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>monitor_type</string>
+            <column name="monitor_type" typeName="varchar" type="varchar" size="50" decimals="0" notNullable="true" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>monitor_format</string>
+            <column name="monitor_format" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>queue_youarenext</string>
+            <column name="queue_youarenext" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>queue_thereare</string>
+            <column name="queue_thereare" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>queue_callswaiting</string>
+            <column name="queue_callswaiting" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>queue_holdtime</string>
+            <column name="queue_holdtime" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>queue_minutes</string>
+            <column name="queue_minutes" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>queue_seconds</string>
+            <column name="queue_seconds" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>queue_lessthan</string>
+            <column name="queue_lessthan" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>queue_thankyou</string>
+            <column name="queue_thankyou" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>queue_reporthold</string>
+            <column name="queue_reporthold" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>announce_frequency</string>
+            <column name="announce_frequency" typeName="int" type="integer" size="10" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>announce_round_seconds</string>
+            <column name="announce_round_seconds" typeName="int" type="integer" size="10" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>announce_holdtime</string>
+            <column name="announce_holdtime" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>retry</string>
+            <column name="retry" typeName="int" type="integer" size="10" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>wrapuptime</string>
+            <column name="wrapuptime" typeName="int" type="integer" size="10" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>maxlen</string>
+            <column name="maxlen" typeName="int" type="integer" size="10" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>servicelevel</string>
+            <column name="servicelevel" typeName="int" type="integer" size="10" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>strategy</string>
+            <column name="strategy" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>joinempty</string>
+            <column name="joinempty" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>leavewhenempty</string>
+            <column name="leavewhenempty" typeName="varchar" type="varchar" size="128" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>eventmemberstatus</string>
+            <column name="eventmemberstatus" typeName="varchar" type="varchar" size="4" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>eventwhencalled</string>
+            <column name="eventwhencalled" typeName="varchar" type="varchar" size="4" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>reportholdtime</string>
+            <column name="reportholdtime" typeName="BIT" type="bit" size="0" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>memberdelay</string>
+            <column name="memberdelay" typeName="int" type="integer" size="10" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>weight</string>
+            <column name="weight" typeName="int" type="integer" size="10" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>timeoutrestart</string>
+            <column name="timeoutrestart" typeName="BIT" type="bit" size="0" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>periodic_announce</string>
+            <column name="periodic_announce" typeName="varchar" type="varchar" size="50" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>periodic_announce_frequency</string>
+            <column name="periodic_announce_frequency" typeName="int" type="integer" size="10" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>ringinuse</string>
+            <column name="ringinuse" typeName="BIT" type="bit" size="0" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+        </columns>
+        <uniqueConstraints>
+          <entry>
+            <string>PRIMARY</string>
+            <index reference="../../../columns/entry/column/uniqueConstraints/index"/>
+          </entry>
+        </uniqueConstraints>
+      </table>
+    </entry>
+    <entry>
+      <string>sip_buddies</string>
+      <table name="sip_buddies">
+        <columns>
+          <entry>
+            <string>id</string>
+            <column name="id" typeName="int" type="integer" size="10" decimals="0" notNullable="true" primaryKey="true">
+              <table reference="../../../.."/>
+              <uniqueConstraints>
+                <index name="PRIMARY">
+                  <columns>
+                    <string>id</string>
+                  </columns>
+                </index>
+              </uniqueConstraints>
+            </column>
+          </entry>
+          <entry>
+            <string>name</string>
+            <column name="name" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="true" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints>
+                <index name="name">
+                  <columns>
+                    <string>name</string>
+                  </columns>
+                </index>
+              </uniqueConstraints>
+            </column>
+          </entry>
+          <entry>
+            <string>accountcode</string>
+            <column name="accountcode" typeName="varchar" type="varchar" size="20" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>amaflags</string>
+            <column name="amaflags" typeName="varchar" type="varchar" size="7" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>callgroup</string>
+            <column name="callgroup" typeName="varchar" type="varchar" size="10" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>callerid</string>
+            <column name="callerid" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>canreinvite</string>
+            <column name="canreinvite" typeName="char" type="char" size="3" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>context</string>
+            <column name="context" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>defaultip</string>
+            <column name="defaultip" typeName="varchar" type="varchar" size="15" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>dtmfmode</string>
+            <column name="dtmfmode" typeName="varchar" type="varchar" size="7" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>fromuser</string>
+            <column name="fromuser" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>fromdomain</string>
+            <column name="fromdomain" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>fullcontact</string>
+            <column name="fullcontact" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>host</string>
+            <column name="host" typeName="varchar" type="varchar" size="31" decimals="0" notNullable="true" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>insecure</string>
+            <column name="insecure" typeName="varchar" type="varchar" size="20" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>language</string>
+            <column name="language" typeName="char" type="char" size="2" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>mailbox</string>
+            <column name="mailbox" typeName="varchar" type="varchar" size="50" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>md5secret</string>
+            <column name="md5secret" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>nat</string>
+            <column name="nat" typeName="varchar" type="varchar" size="5" decimals="0" notNullable="true" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>deny</string>
+            <column name="deny" typeName="varchar" type="varchar" size="95" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>permit</string>
+            <column name="permit" typeName="varchar" type="varchar" size="95" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>mask</string>
+            <column name="mask" typeName="varchar" type="varchar" size="95" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>pickupgroup</string>
+            <column name="pickupgroup" typeName="varchar" type="varchar" size="10" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>port</string>
+            <column name="port" typeName="varchar" type="varchar" size="5" decimals="0" notNullable="true" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>qualify</string>
+            <column name="qualify" typeName="char" type="char" size="3" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>restrictcid</string>
+            <column name="restrictcid" typeName="char" type="char" size="1" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>rtptimeout</string>
+            <column name="rtptimeout" typeName="char" type="char" size="3" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>rtpholdtimeout</string>
+            <column name="rtpholdtimeout" typeName="char" type="char" size="3" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>secret</string>
+            <column name="secret" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>type</string>
+            <column name="type" typeName="varchar" type="varchar" size="6" decimals="0" notNullable="true" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>username</string>
+            <column name="username" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="true" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>disallow</string>
+            <column name="disallow" typeName="varchar" type="varchar" size="100" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>allow</string>
+            <column name="allow" typeName="varchar" type="varchar" size="100" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>musiconhold</string>
+            <column name="musiconhold" typeName="varchar" type="varchar" size="100" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>regseconds</string>
+            <column name="regseconds" typeName="int" type="integer" size="10" decimals="0" notNullable="true" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>ipaddr</string>
+            <column name="ipaddr" typeName="varchar" type="varchar" size="15" decimals="0" notNullable="true" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>regexten</string>
+            <column name="regexten" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="true" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>cancallforward</string>
+            <column name="cancallforward" typeName="char" type="char" size="3" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+        </columns>
+        <uniqueConstraints>
+          <entry>
+            <string>PRIMARY</string>
+            <index reference="../../../columns/entry/column/uniqueConstraints/index"/>
+          </entry>
+          <entry>
+            <string>name</string>
+            <index reference="../../../columns/entry[2]/column/uniqueConstraints/index"/>
+          </entry>
+        </uniqueConstraints>
+      </table>
+    </entry>
+    <entry>
+      <string>voicemessages</string>
+      <table name="voicemessages">
+        <columns>
+          <entry>
+            <string>id</string>
+            <column name="id" typeName="int" type="integer" size="10" decimals="0" notNullable="true" primaryKey="true">
+              <table reference="../../../.."/>
+              <uniqueConstraints>
+                <index name="PRIMARY">
+                  <columns>
+                    <string>id</string>
+                  </columns>
+                </index>
+              </uniqueConstraints>
+            </column>
+          </entry>
+          <entry>
+            <string>msgnum</string>
+            <column name="msgnum" typeName="int" type="integer" size="10" decimals="0" notNullable="true" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>dir</string>
+            <column name="dir" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>context</string>
+            <column name="context" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>macrocontext</string>
+            <column name="macrocontext" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>callerid</string>
+            <column name="callerid" typeName="varchar" type="varchar" size="40" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>origtime</string>
+            <column name="origtime" typeName="varchar" type="varchar" size="40" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>duration</string>
+            <column name="duration" typeName="varchar" type="varchar" size="20" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>mailboxuser</string>
+            <column name="mailboxuser" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>mailboxcontext</string>
+            <column name="mailboxcontext" typeName="varchar" type="varchar" size="80" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+          <entry>
+            <string>recording</string>
+            <column name="recording" typeName="longblob" type="longvarbinary" size="2147483647" decimals="0" notNullable="false" primaryKey="false">
+              <table reference="../../../.."/>
+              <uniqueConstraints/>
+            </column>
+          </entry>
+        </columns>
+        <uniqueConstraints>
+          <entry>
+            <string>PRIMARY</string>
+            <index reference="../../../columns/entry/column/uniqueConstraints/index"/>
+          </entry>
+        </uniqueConstraints>
+      </table>
+    </entry>
+  </tables>
+</schema>

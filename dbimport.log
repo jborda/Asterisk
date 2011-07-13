@@ -1,0 +1,258 @@
+13:57:36,218 INFO ImportJDBCTables Started
+13:57:36,218 INFO ImportJDBCTables args: [driver=com.mysql.jdbc.Driver, user=root, password=senhadobanco, url=jdbc:mysql://localhost/asterisk, -importSchema, C:\eclipse-workspace\Asterisk\src\br\com\jborda\asterisk\dbimport.xml]
+13:57:36,218 INFO ImportJDBCTables arguments:[driver=com.mysql.jdbc.Driver, user=root, password=senhadobanco, url=jdbc:mysql://localhost/asterisk, -importSchema, C:\eclipse-workspace\Asterisk\src\br\com\jborda\asterisk\dbimport.xml]
+13:57:36,234 DEBUG JDBCImporter importSchema
+13:57:36,234 DEBUG JDBCImporter createConnection
+13:57:36,234 INFO JDBCDriver loadDriver(com.mysql.jdbc.Driver)
+13:57:36,234 INFO JDBCDriver Class.forName(com.mysql.jdbc.Driver)
+13:57:36,375 DEBUG JDBCImporter getMetaData
+13:57:36,375 DEBUG JDBCImporter importTables
+13:57:36,375 DEBUG JDBCImporter importTable: extensions
+13:57:36,375 DEBUG JDBCImporter importTable: queue_members
+13:57:36,375 DEBUG JDBCImporter importTable: queues
+13:57:36,375 DEBUG JDBCImporter importTable: sip_buddies
+13:57:36,375 DEBUG JDBCImporter importTable: voicemessages
+13:57:36,375 DEBUG JDBCImporter importColumns(null, null, null, null)
+13:57:36,406 DEBUG JDBCImporter importColumn: extensions.id
+13:57:36,406 DEBUG JDBCImporter importColumn: extensions.context
+13:57:36,406 DEBUG JDBCImporter importColumn: extensions.exten
+13:57:36,406 DEBUG JDBCImporter importColumn: extensions.priority
+13:57:36,406 DEBUG JDBCImporter importColumn: extensions.app
+13:57:36,406 DEBUG JDBCImporter importColumn: extensions.appdata
+13:57:36,406 DEBUG JDBCImporter importColumn: queue_members.uniqueid
+13:57:36,406 DEBUG JDBCImporter importColumn: queue_members.membername
+13:57:36,406 DEBUG JDBCImporter importColumn: queue_members.queue_name
+13:57:36,406 DEBUG JDBCImporter importColumn: queue_members.interface
+13:57:36,406 DEBUG JDBCImporter importColumn: queue_members.penalty
+13:57:36,406 DEBUG JDBCImporter importColumn: queue_members.paused
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.name
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.musiconhold
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.announce
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.context
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.timeout
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.monitor_type
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.monitor_format
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.queue_youarenext
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.queue_thereare
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.queue_callswaiting
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.queue_holdtime
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.queue_minutes
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.queue_seconds
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.queue_lessthan
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.queue_thankyou
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.queue_reporthold
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.announce_frequency
+13:57:36,406 DEBUG JDBCImporter importColumn: queues.announce_round_seconds
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.announce_holdtime
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.retry
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.wrapuptime
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.maxlen
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.servicelevel
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.strategy
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.joinempty
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.leavewhenempty
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.eventmemberstatus
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.eventwhencalled
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.reportholdtime
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.memberdelay
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.weight
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.timeoutrestart
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.periodic_announce
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.periodic_announce_frequency
+13:57:36,421 DEBUG JDBCImporter importColumn: queues.ringinuse
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.id
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.name
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.accountcode
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.amaflags
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.callgroup
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.callerid
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.canreinvite
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.context
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.defaultip
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.dtmfmode
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.fromuser
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.fromdomain
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.fullcontact
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.host
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.insecure
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.language
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.mailbox
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.md5secret
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.nat
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.deny
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.permit
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.mask
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.pickupgroup
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.port
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.qualify
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.restrictcid
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.rtptimeout
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.rtpholdtimeout
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.secret
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.type
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.username
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.disallow
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.allow
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.musiconhold
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.regseconds
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.ipaddr
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.regexten
+13:57:36,421 DEBUG JDBCImporter importColumn: sip_buddies.cancallforward
+13:57:36,421 DEBUG JDBCImporter importColumn: voicemessages.id
+13:57:36,421 DEBUG JDBCImporter importColumn: voicemessages.msgnum
+13:57:36,421 DEBUG JDBCImporter importColumn: voicemessages.dir
+13:57:36,421 DEBUG JDBCImporter importColumn: voicemessages.context
+13:57:36,421 DEBUG JDBCImporter importColumn: voicemessages.macrocontext
+13:57:36,421 DEBUG JDBCImporter importColumn: voicemessages.callerid
+13:57:36,421 DEBUG JDBCImporter importColumn: voicemessages.origtime
+13:57:36,421 DEBUG JDBCImporter importColumn: voicemessages.duration
+13:57:36,421 DEBUG JDBCImporter importColumn: voicemessages.mailboxuser
+13:57:36,421 DEBUG JDBCImporter importColumn: voicemessages.mailboxcontext
+13:57:36,421 DEBUG JDBCImporter importColumn: voicemessages.recording
+13:57:36,421 DEBUG JDBCImporter importPrimaryKeys(extensions)
+13:57:36,421 DEBUG JDBCImporter importPrimaryKeys: extensions.context, pkName=PRIMARY
+13:57:36,421 DEBUG JDBCImporter importPrimaryKeys: extensions.exten, pkName=PRIMARY
+13:57:36,421 DEBUG JDBCImporter importPrimaryKeys: extensions.priority, pkName=PRIMARY
+13:57:36,421 DEBUG JDBCImporter importPrimaryKeys(queue_members)
+13:57:36,421 DEBUG JDBCImporter importPrimaryKeys: queue_members.uniqueid, pkName=PRIMARY
+13:57:36,421 DEBUG JDBCImporter importPrimaryKeys(queues)
+13:57:36,421 DEBUG JDBCImporter importPrimaryKeys: queues.name, pkName=PRIMARY
+13:57:36,421 DEBUG JDBCImporter importPrimaryKeys(sip_buddies)
+13:57:36,421 DEBUG JDBCImporter importPrimaryKeys: sip_buddies.id, pkName=PRIMARY
+13:57:36,421 DEBUG JDBCImporter importPrimaryKeys(voicemessages)
+13:57:36,421 DEBUG JDBCImporter importPrimaryKeys: voicemessages.id, pkName=PRIMARY
+13:57:36,421 DEBUG JDBCImporter importForeignKeys
+13:57:36,421 DEBUG JDBCImporter importForeignKeys(extensions)
+13:57:36,421 DEBUG JDBCImporter importForeignKeys(queue_members)
+13:57:36,421 DEBUG JDBCImporter importForeignKeys(queues)
+13:57:36,421 DEBUG JDBCImporter importForeignKeys(sip_buddies)
+13:57:36,421 DEBUG JDBCImporter importForeignKeys(voicemessages)
+13:57:36,421 DEBUG JDBCImporter importIndexes
+13:57:36,421 DEBUG JDBCImporter importIndexes(extensions)
+13:57:36,421 DEBUG JDBCImporter importIndexes: table=extensions, column=context, columnNoWithinIndex=1, index=PRIMARY
+13:57:36,421 DEBUG JDBCImporter importIndexes: table=extensions, column=exten, columnNoWithinIndex=2, index=PRIMARY
+13:57:36,421 DEBUG JDBCImporter importIndexes: table=extensions, column=priority, columnNoWithinIndex=3, index=PRIMARY
+13:57:36,421 DEBUG JDBCImporter importIndexes(queue_members)
+13:57:36,421 DEBUG JDBCImporter importIndexes: table=queue_members, column=uniqueid, columnNoWithinIndex=1, index=PRIMARY
+13:57:36,421 DEBUG JDBCImporter importIndexes: table=queue_members, column=queue_name, columnNoWithinIndex=1, index=queue_interface
+13:57:36,421 DEBUG JDBCImporter importIndexes: table=queue_members, column=interface, columnNoWithinIndex=2, index=queue_interface
+13:57:36,421 DEBUG JDBCImporter importIndexes(queues)
+13:57:36,421 DEBUG JDBCImporter importIndexes: table=queues, column=name, columnNoWithinIndex=1, index=PRIMARY
+13:57:36,421 DEBUG JDBCImporter importIndexes(sip_buddies)
+13:57:36,421 DEBUG JDBCImporter importIndexes: table=sip_buddies, column=id, columnNoWithinIndex=1, index=PRIMARY
+13:57:36,437 DEBUG JDBCImporter importIndexes: table=sip_buddies, column=name, columnNoWithinIndex=1, index=name
+13:57:36,437 DEBUG JDBCImporter importIndexes(voicemessages)
+13:57:36,437 DEBUG JDBCImporter importIndexes: table=voicemessages, column=id, columnNoWithinIndex=1, index=PRIMARY
+13:57:36,437 DEBUG JDBCImporter Imported tables:
+extensions
+	app, type=varchar, typeName=varchar, size=20, decimals=0, notNullable
+	appdata, type=varchar, typeName=varchar, size=128, decimals=0, notNullable
+	context, type=varchar, typeName=varchar, size=20, decimals=0, notNullable, primaryKey, uniqueConstraints=[Index[name=PRIMARY, columns=[context, exten, priority]]]
+	exten, type=varchar, typeName=varchar, size=20, decimals=0, notNullable, primaryKey, uniqueConstraints=[Index[name=PRIMARY, columns=[context, exten, priority]]]
+	id, type=integer, typeName=int, size=10, decimals=0, notNullable
+	priority, type=tinyint, typeName=tinyint, size=3, decimals=0, notNullable, primaryKey, uniqueConstraints=[Index[name=PRIMARY, columns=[context, exten, priority]]]
+	Index[name=PRIMARY, columns=[context, exten, priority]]
+queue_members
+	interface, type=varchar, typeName=varchar, size=128, decimals=0, uniqueConstraints=[Index[name=queue_interface, columns=[queue_name, interface]]]
+	membername, type=varchar, typeName=varchar, size=40, decimals=0
+	paused, type=bit, typeName=BIT, decimals=0
+	penalty, type=integer, typeName=int, size=10, decimals=0
+	queue_name, type=varchar, typeName=varchar, size=128, decimals=0, uniqueConstraints=[Index[name=queue_interface, columns=[queue_name, interface]]]
+	uniqueid, type=integer, typeName=int unsigned, size=10, decimals=0, notNullable, primaryKey, uniqueConstraints=[Index[name=PRIMARY, columns=[uniqueid]]]
+	Index[name=PRIMARY, columns=[uniqueid]]
+	Index[name=queue_interface, columns=[queue_name, interface]]
+queues
+	announce, type=varchar, typeName=varchar, size=128, decimals=0
+	announce_frequency, type=integer, typeName=int, size=10, decimals=0
+	announce_holdtime, type=varchar, typeName=varchar, size=128, decimals=0
+	announce_round_seconds, type=integer, typeName=int, size=10, decimals=0
+	context, type=varchar, typeName=varchar, size=128, decimals=0
+	eventmemberstatus, type=varchar, typeName=varchar, size=4, decimals=0
+	eventwhencalled, type=varchar, typeName=varchar, size=4, decimals=0
+	joinempty, type=varchar, typeName=varchar, size=128, decimals=0
+	leavewhenempty, type=varchar, typeName=varchar, size=128, decimals=0
+	maxlen, type=integer, typeName=int, size=10, decimals=0
+	memberdelay, type=integer, typeName=int, size=10, decimals=0
+	monitor_format, type=varchar, typeName=varchar, size=128, decimals=0
+	monitor_type, type=varchar, typeName=varchar, size=50, decimals=0, notNullable
+	musiconhold, type=varchar, typeName=varchar, size=128, decimals=0
+	name, type=varchar, typeName=varchar, size=128, decimals=0, notNullable, primaryKey, uniqueConstraints=[Index[name=PRIMARY, columns=[name]]]
+	periodic_announce, type=varchar, typeName=varchar, size=50, decimals=0
+	periodic_announce_frequency, type=integer, typeName=int, size=10, decimals=0
+	queue_callswaiting, type=varchar, typeName=varchar, size=128, decimals=0
+	queue_holdtime, type=varchar, typeName=varchar, size=128, decimals=0
+	queue_lessthan, type=varchar, typeName=varchar, size=128, decimals=0
+	queue_minutes, type=varchar, typeName=varchar, size=128, decimals=0
+	queue_reporthold, type=varchar, typeName=varchar, size=128, decimals=0
+	queue_seconds, type=varchar, typeName=varchar, size=128, decimals=0
+	queue_thankyou, type=varchar, typeName=varchar, size=128, decimals=0
+	queue_thereare, type=varchar, typeName=varchar, size=128, decimals=0
+	queue_youarenext, type=varchar, typeName=varchar, size=128, decimals=0
+	reportholdtime, type=bit, typeName=BIT, decimals=0
+	retry, type=integer, typeName=int, size=10, decimals=0
+	ringinuse, type=bit, typeName=BIT, decimals=0
+	servicelevel, type=integer, typeName=int, size=10, decimals=0
+	strategy, type=varchar, typeName=varchar, size=128, decimals=0
+	timeout, type=integer, typeName=int, size=10, decimals=0
+	timeoutrestart, type=bit, typeName=BIT, decimals=0
+	weight, type=integer, typeName=int, size=10, decimals=0
+	wrapuptime, type=integer, typeName=int, size=10, decimals=0
+	Index[name=PRIMARY, columns=[name]]
+sip_buddies
+	accountcode, type=varchar, typeName=varchar, size=20, decimals=0
+	allow, type=varchar, typeName=varchar, size=100, decimals=0
+	amaflags, type=varchar, typeName=varchar, size=7, decimals=0
+	callerid, type=varchar, typeName=varchar, size=80, decimals=0
+	callgroup, type=varchar, typeName=varchar, size=10, decimals=0
+	cancallforward, type=char, typeName=char, size=3, decimals=0
+	canreinvite, type=char, typeName=char, size=3, decimals=0
+	context, type=varchar, typeName=varchar, size=80, decimals=0
+	defaultip, type=varchar, typeName=varchar, size=15, decimals=0
+	deny, type=varchar, typeName=varchar, size=95, decimals=0
+	disallow, type=varchar, typeName=varchar, size=100, decimals=0
+	dtmfmode, type=varchar, typeName=varchar, size=7, decimals=0
+	fromdomain, type=varchar, typeName=varchar, size=80, decimals=0
+	fromuser, type=varchar, typeName=varchar, size=80, decimals=0
+	fullcontact, type=varchar, typeName=varchar, size=80, decimals=0
+	host, type=varchar, typeName=varchar, size=31, decimals=0, notNullable
+	id, type=integer, typeName=int, size=10, decimals=0, notNullable, primaryKey, uniqueConstraints=[Index[name=PRIMARY, columns=[id]]]
+	insecure, type=varchar, typeName=varchar, size=20, decimals=0
+	ipaddr, type=varchar, typeName=varchar, size=15, decimals=0, notNullable
+	language, type=char, typeName=char, size=2, decimals=0
+	mailbox, type=varchar, typeName=varchar, size=50, decimals=0
+	mask, type=varchar, typeName=varchar, size=95, decimals=0
+	md5secret, type=varchar, typeName=varchar, size=80, decimals=0
+	musiconhold, type=varchar, typeName=varchar, size=100, decimals=0
+	name, type=varchar, typeName=varchar, size=80, decimals=0, notNullable, uniqueConstraints=[Index[name=name, columns=[name]]]
+	nat, type=varchar, typeName=varchar, size=5, decimals=0, notNullable
+	permit, type=varchar, typeName=varchar, size=95, decimals=0
+	pickupgroup, type=varchar, typeName=varchar, size=10, decimals=0
+	port, type=varchar, typeName=varchar, size=5, decimals=0, notNullable
+	qualify, type=char, typeName=char, size=3, decimals=0
+	regexten, type=varchar, typeName=varchar, size=80, decimals=0, notNullable
+	regseconds, type=integer, typeName=int, size=10, decimals=0, notNullable
+	restrictcid, type=char, typeName=char, size=1, decimals=0
+	rtpholdtimeout, type=char, typeName=char, size=3, decimals=0
+	rtptimeout, type=char, typeName=char, size=3, decimals=0
+	secret, type=varchar, typeName=varchar, size=80, decimals=0
+	type, type=varchar, typeName=varchar, size=6, decimals=0, notNullable
+	username, type=varchar, typeName=varchar, size=80, decimals=0, notNullable
+	Index[name=PRIMARY, columns=[id]]
+	Index[name=name, columns=[name]]
+voicemessages
+	callerid, type=varchar, typeName=varchar, size=40, decimals=0
+	context, type=varchar, typeName=varchar, size=80, decimals=0
+	dir, type=varchar, typeName=varchar, size=80, decimals=0
+	duration, type=varchar, typeName=varchar, size=20, decimals=0
+	id, type=integer, typeName=int, size=10, decimals=0, notNullable, primaryKey, uniqueConstraints=[Index[name=PRIMARY, columns=[id]]]
+	macrocontext, type=varchar, typeName=varchar, size=80, decimals=0
+	mailboxcontext, type=varchar, typeName=varchar, size=80, decimals=0
+	mailboxuser, type=varchar, typeName=varchar, size=80, decimals=0
+	msgnum, type=integer, typeName=int, size=10, decimals=0, notNullable
+	origtime, type=varchar, typeName=varchar, size=40, decimals=0
+	recording, type=longvarbinary, typeName=longblob, size=2147483647, decimals=0
+	Index[name=PRIMARY, columns=[id]]
+
+13:57:36,437 DEBUG JDBCImporter closeConnection
+13:57:36,437 INFO ImportJDBCTables Save XML C:\eclipse-workspace\Asterisk\src\br\com\jborda\asterisk\dbimport.xml
+13:57:36,671 INFO ImportJDBCTables Finished.

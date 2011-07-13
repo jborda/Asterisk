@@ -1,0 +1,210 @@
+<project>
+  <packages>
+    <javaPackage name="br.com.jborda.asterisk.util">
+      <projectName>Asterisk</projectName>
+      <path>src/br/com/jborda/asterisk/util</path>
+      <classes>
+        <classifier name="HibernateHelper">
+          <stereotype>Persistence Helper</stereotype>
+          <variables>
+            <variable name="singleton">
+              <type class="br.com.jborda.asterisk.util.HibernateHelper"/>
+              <multiplicity>0..1</multiplicity>
+              <modifiers>8</modifiers>
+              <access>2</access>
+              <value>new HibernateHelper()</value>
+            </variable>
+            <variable name="factory">
+              <type>javax.persistence.EntityManagerFactory</type>
+              <multiplicity>0..1</multiplicity>
+              <access>2</access>
+            </variable>
+            <variable name="currentEntityManager">
+              <type>ThreadLocal</type>
+              <multiplicity>0..1</multiplicity>
+              <access>2</access>
+              <value>new ThreadLocal();</value>
+            </variable>
+          </variables>
+          <operations>
+            <operation name="constructor">
+              <multiplicity>1</multiplicity>
+              <access>2</access>
+              <generatedName>HibernateHelper</generatedName>
+              <method>
+                <statements>
+                  <javaCode></javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="main">
+              <type basicType="void"/>
+              <multiplicity>0</multiplicity>
+              <modifiers>8</modifiers>
+              <access>1</access>
+              <generatedName>main</generatedName>
+              <parameters>
+                <variable name="args">
+                  <type>String</type>
+                  <multiplicity>*</multiplicity>
+                  <access>1</access>
+                  <arrayCount>1</arrayCount>
+                </variable>
+              </parameters>
+              <exceptions>
+                <exception>Exception</exception>
+              </exceptions>
+              <method>
+                <statements>
+                  <javaCode>String sqlFile = null;</javaCode>
+                  <javaCode>if(args.length &gt; 0) { sqlFile = args[0]; }</javaCode>
+                  <javaCode>boolean print = (sqlFile == null);</javaCode>
+                  <javaCode>boolean export = (sqlFile == null);</javaCode>
+                  <javaCode></javaCode>
+                  <javaCode>org.hibernate.cfg.Configuration config = getInstance().getConfiguration();</javaCode>
+                  <javaCode>org.hibernate.tool.hbm2ddl.SchemaExport exporter = new org.hibernate.tool.hbm2ddl.SchemaExport(config);</javaCode>
+                  <javaCode>if(sqlFile != null) { exporter.setOutputFile(sqlFile); }</javaCode>
+                  <javaCode>exporter.create(print, export);</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="getInstance">
+              <type class="br.com.jborda.asterisk.util.HibernateHelper"/>
+              <multiplicity>0..1</multiplicity>
+              <modifiers>8</modifiers>
+              <access>1</access>
+              <generatedName>getInstance</generatedName>
+              <method>
+                <statements>
+                  <javaCode>return singleton;</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="getFactory">
+              <type>javax.persistence.EntityManagerFactory</type>
+              <multiplicity>0..1</multiplicity>
+              <modifiers>32</modifiers>
+              <access>1</access>
+              <generatedName>getFactory</generatedName>
+              <method>
+                <statements>
+                  <javaCode>if(factory == null) { factory=javax.persistence.Persistence.createEntityManagerFactory(&quot;Asterisk&quot;); }</javaCode>
+                  <javaCode>return factory;</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="close">
+              <type basicType="void"/>
+              <multiplicity>0</multiplicity>
+              <modifiers>32</modifiers>
+              <access>1</access>
+              <generatedName>close</generatedName>
+              <method>
+                <statements>
+                  <javaCode>closeEntityManager();</javaCode>
+                  <javaCode>if (factory != null) { factory.close(); factory = null; }</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="getConfiguration">
+              <type>org.hibernate.cfg.Configuration</type>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+              <generatedName>getConfiguration</generatedName>
+              <exceptions>
+                <exception>org.hibernate.MappingException</exception>
+              </exceptions>
+              <method>
+                <statements>
+                  <javaCode>org.hibernate.cfg.AnnotationConfiguration config = new org.hibernate.cfg.AnnotationConfiguration();</javaCode>
+                  <javaCode>return config;</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="getEntityManager">
+              <type>javax.persistence.EntityManager</type>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+              <generatedName>getEntityManager</generatedName>
+              <method>
+                <statements>
+                  <javaCode>javax.persistence.EntityManager entityManager=(javax.persistence.EntityManager)currentEntityManager.get();</javaCode>
+                  <javaCode>if(entityManager == null || !entityManager.isOpen()) { entityManager=getFactory().createEntityManager(); currentEntityManager.set(entityManager); }</javaCode>
+                  <javaCode>return entityManager;</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="closeEntityManager">
+              <type>void</type>
+              <multiplicity>0</multiplicity>
+              <access>1</access>
+              <generatedName>closeEntityManager</generatedName>
+              <method>
+                <statements>
+                  <javaCode>javax.persistence.EntityManager entityManager = (javax.persistence.EntityManager)currentEntityManager.get();</javaCode>
+                  <javaCode>if (entityManager != null &amp;&amp; entityManager.isOpen()) { entityManager.close(); }</javaCode>
+                  <javaCode>currentEntityManager.set(null);</javaCode>
+                </statements>
+              </method>
+            </operation>
+          </operations>
+          <generatedFiles>
+            <name>HibernateHelper.java</name>
+            <compilationUnitId>=Asterisk/src&lt;br.com.jborda.asterisk.util{HibernateHelper.java</compilationUnitId>
+          </generatedFiles>
+        </classifier>
+      </classes>
+      <rootName>src</rootName>
+      <generateHibernateHelper>true</generateHibernateHelper>
+    </javaPackage>
+  </packages>
+  <basicTypes>
+    <basicType>void</basicType>
+  </basicTypes>
+  <codeGenerators>
+    <Java-Bean>
+      <generate-property-support>false</generate-property-support>
+    </Java-Bean>
+    <Unit-Test>
+      <src-dir>test</src-dir>
+      <add-junit3-libraries>false</add-junit3-libraries>
+    </Unit-Test>
+    <Persistent>
+      <create-hibernate-cfg-xml>false</create-hibernate-cfg-xml>
+      <add-hsqldb-libraries>true</add-hsqldb-libraries>
+      <platform>Java Persistence API</platform>
+      <create-persistence-xml>true</create-persistence-xml>
+      <src-dir>(default)</src-dir>
+      <create-helper-main>true</create-helper-main>
+      <annotate-getters>true</annotate-getters>
+      <generate-dto-associations-many>false</generate-dto-associations-many>
+      <generate-collections-as-set>true</generate-collections-as-set>
+      <generate-full-classnames>true</generate-full-classnames>
+      <add-hibernate3-libraries>true</add-hibernate3-libraries>
+      <generate-dto>false</generate-dto>
+      <generate-interfaces>false</generate-interfaces>
+    </Persistent>
+    <DAO>
+      <src-dir>(default)</src-dir>
+      <generate-interfaces>false</generate-interfaces>
+      <use-spring-templates>false</use-spring-templates>
+    </DAO>
+    <GWT-Service>
+      <version>1.5</version>
+    </GWT-Service>
+  </codeGenerators>
+  <properties>
+    <conf-dir>conf</conf-dir>
+    <platform>Java Persistence API</platform>
+    <root-package>br.com.jborda.asterisk</root-package>
+    <create-hibernate-properties>true</create-hibernate-properties>
+    <create-log4j-properties>true</create-log4j-properties>
+    <project-name>Asterisk</project-name>
+    <create-model-diagram>true</create-model-diagram>
+  </properties>
+  <codeGeneration>
+    <generate-equals-and-hashcode>true</generate-equals-and-hashcode>
+    <source-compatibility>5.0</source-compatibility>
+    <grammar>None</grammar>
+  </codeGeneration>
+</project>
