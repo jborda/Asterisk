@@ -1,4 +1,4 @@
-CREATE TABLE queues (
+CREATE TABLE asterisk.queues (
 name varchar(128) NOT NULL,
 musiconhold varchar(128) default NULL,
 announce varchar(128) default NULL,

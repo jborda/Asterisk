@@ -1,4 +1,4 @@
-CREATE TABLE sip_buddies (
+CREATE TABLE asterisk.sip_buddies (
 id int(11) NOT NULL auto_increment,
 name varchar(80) NOT NULL default '',
 accountcode varchar(20) default NULL,

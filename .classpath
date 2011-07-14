@@ -25,5 +25,7 @@
 	<classpathentry kind="var" path="HIBEROBJECTS_JPA/hibernate-validator.jar"/>
 	<classpathentry kind="var" path="HIBEROBJECTS_JPA/hibernate-commons-annotations.jar"/>
 	<classpathentry kind="var" path="HIBEROBJECTS_JPA/jboss-archive-browsing.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-3.2.0-alpha-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

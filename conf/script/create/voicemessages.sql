@@ -1,4 +1,4 @@
-CREATE TABLE voicemessages (
+CREATE TABLE asterisk.voicemessages (
 id int(11) NOT NULL auto_increment,
 msgnum int(11) NOT NULL default '0',
 dir varchar(80) default '',

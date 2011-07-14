@@ -1,4 +1,4 @@
-CREATE TABLE queue_members (
+CREATE TABLE asterisk.queue_members (
 uniqueid int(10) unsigned NOT NULL auto_increment,
 membername varchar(40) default NULL,
 queue_name varchar(128) default NULL,
